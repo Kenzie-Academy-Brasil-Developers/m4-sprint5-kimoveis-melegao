@@ -10,11 +10,11 @@ const userLoginController = async (req: Request, res: Response) => {
 
         const userLogin = await userLoginService({email, password})
 
-        return res.status(200).json(userLogin)
+        return res.status(200).json({token: userLogin})
 
     }catch(err){
         if (err instanceof Error){
-            return res.status(400).send({
+            return res.status(403).send({
                 'error': err.name,
                 'message': err.message
             })

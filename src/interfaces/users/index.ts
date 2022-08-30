@@ -26,3 +26,7 @@ export interface IUserCreate {
     password: string
     isAdm: boolean
 }
+
+export interface IUserDelete {
+    id: string
+}

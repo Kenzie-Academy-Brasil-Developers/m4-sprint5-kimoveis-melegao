@@ -23,7 +23,16 @@ const userLoginService = async ({email, password}: IUserLogin) => {
         throw new Error("Invalid password or e-mail")
     }
 
-    const token = jwt.sign({isAdm: account.isAdm, id: account.id}, 'SECRET_KEY', {expiresIn: '24h'})
+    const token = jwt.sign(
+            {
+                isAdm: account.isAdm
+            },
+            'SECRET_KEY',
+            {
+                subject: account.id,
+                expiresIn: '24h'
+            }
+        )
 
     return token
 }
