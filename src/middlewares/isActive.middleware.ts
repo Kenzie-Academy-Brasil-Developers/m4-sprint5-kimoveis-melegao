@@ -23,7 +23,7 @@ const isActiveMiddleware = async (req: Request, res: Response, next: NextFunctio
     if (user.isActive === false){
         return res.status(400).json({message: 'User is already deleted'})
     }
-    console.log('FOI PRO NEXT')
+    
     next()
 
 }

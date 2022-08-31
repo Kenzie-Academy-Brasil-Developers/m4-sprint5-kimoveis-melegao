@@ -2,9 +2,9 @@ import { Router } from "express";
 
 const routes = Router()
 
-import userCreateController from "../controllers/userCreate.controller";
-import userDeleteController from "../controllers/userDelete.controller";
-import userListController from "../controllers/userList.controller";
+import userCreateController from "../controllers/users/userCreate.controller";
+import userDeleteController from "../controllers/users/userDelete.controller";
+import userListController from "../controllers/users/userList.controller";
 
 import authTokenMiddleware from "../middlewares/authToken.middleware";
 import isActiveMiddleware from "../middlewares/isActive.middleware";

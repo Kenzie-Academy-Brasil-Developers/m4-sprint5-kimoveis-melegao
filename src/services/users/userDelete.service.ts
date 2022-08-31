@@ -1,6 +1,6 @@
-import AppDataSource from "../data-source"
-import { User } from "../entities/user.entity"
-import { IUserDelete } from "../interfaces/users"
+import AppDataSource from "../../data-source"
+import { User } from "../../entities/user.entity"
+import { IUserDelete } from "../../interfaces/users"
 
 
 
