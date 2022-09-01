@@ -1,7 +1,8 @@
-import { Entity, Column, PrimaryColumn, CreateDateColumn, OneToOne, JoinColumn, ManyToOne } from "typeorm";
+import { Entity, Column, PrimaryColumn, CreateDateColumn, OneToOne, JoinColumn, ManyToOne, OneToMany } from "typeorm";
 import  { v4 as uuid } from 'uuid'
 import { Addresses } from "./addresses.entity";
 import { Categories } from "./categories.entity";
+import { Schedules } from "./schedules_users_properties.entity";
 
 
 @Entity('properties')
@@ -31,6 +32,9 @@ export class Properties {
 
     @ManyToOne(() => Categories, {eager: true})
     category: Categories
+
+    @OneToMany(() => Schedules, schedules => schedules.property)
+    schedules: Schedules[]
 
     constructor(){
         if (!this.id){
